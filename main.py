@@ -40,7 +40,12 @@ def display_tasks():
         )
 
 
+
 def complete_task():
+    if not tasks:
+        print("No tasks available to complete.")
+        return
+
     display_tasks()
 
     try:
@@ -48,14 +53,18 @@ def complete_task():
 
         for task in tasks:
             if task["id"] == task_id:
-                task["completed"] = True
-                print("Task marked as completed!")
+                if task["completed"]:
+                    print("This task is already completed.")
+                else:
+                    task["completed"] = True
+                    print("Task marked as completed!")
                 return
 
         print("Task ID not found.")
 
     except ValueError:
         print("Please enter a valid number.")
+
 
 
 def delete_task():
