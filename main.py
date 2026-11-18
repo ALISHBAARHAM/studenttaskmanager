@@ -67,7 +67,12 @@ def complete_task():
 
 
 
+
 def delete_task():
+    if not tasks:
+        print("No tasks available to delete.")
+        return
+
     display_tasks()
 
     try:
@@ -79,10 +84,11 @@ def delete_task():
                 print("Task deleted successfully!")
                 return
 
-        print("Task ID not found.")
+        print("Error: Invalid task ID. No task was deleted.")
 
     except ValueError:
-        print("Please enter a valid number.")
+        print("Please enter a valid numeric task ID.")
+
 
 
 def main():
