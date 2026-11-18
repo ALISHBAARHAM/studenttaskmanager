@@ -84,7 +84,7 @@ def delete_task():
                 print("Task deleted successfully!")
                 return
 
-        print("Error: Invalid task ID. No task was deleted.")
+        print("Error: Task ID does not exist. Please try again.")
 
     except ValueError:
         print("Please enter a valid numeric task ID.")
