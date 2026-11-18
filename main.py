@@ -12,7 +12,7 @@ def add_task():
     title = input("Enter task title: ").strip()
 
     if not title:
-        print("Error: Task title cannot be empty!")
+        print("Error: Task title cannot be empty or contain only spaces!")
         return
 
     task = {
